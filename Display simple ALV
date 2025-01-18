@@ -1,0 +1,20 @@
+*/ Display Simple ALV using classes */
+Select-option s_vbeln for vbak-vbeln.
+Types: Begin of ty_final,
+        vbeln type vbeln_va,
+        erdat type erdat,
+        erzet type erzet,
+        vbtyp type vbtyp,
+        End of ty_final.
+Data : lt_final type table of ty_final,
+        ls_final type ty_final.
+select vbeln,
+        erdat,
+        erzet,
+        vbtyp
+        from vbak
+        where vbeln in @s_vbeln
+        into table @lt_final.
+*/ extract data as per requirment and store it in a final internal table.*/
+
+
